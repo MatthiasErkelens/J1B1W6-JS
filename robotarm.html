@@ -15,15 +15,15 @@
             // Jou instructies volgen hier
             robotArm.speed = 8000;
           for (var k = 0; k < 6; k++) {
-          for (var i = 0; i < 6; i++) {
-            robotArm.moveRight();
-            robotArm.grab();
-            robotArm.moveLeft();
-            robotArm.drop();
-          }
-          robotArm.moveRight();
-          robotArm.moveRight();
-        }
+	          for (var i = 0; i < 6; i++) {
+	            robotArm.moveRight();
+	            robotArm.grab();
+	            robotArm.moveLeft();
+	            robotArm.drop();
+	          }
+	          robotArm.moveRight();
+	          robotArm.moveRight();
+	      	}
           robotArm.run();
 
             // De door jou opgegeven instructies uitvoeren
@@ -39,19 +39,19 @@
             robotArm.loadLevel("exercise 8");
 
             // Jou instructies volgen hier
-            robotArm.speed = 1000;
-            robotArm.moveRight();
-            robotArm.grab();
-              for (var p = 0; p < 7; p++) {
-              for (var k = 0; k < 8; k++) {
-            robotArm.moveRight();
-            }
-            robotArm.drop();
-              for (var j = 0; j < 8; j++) {
-            robotArm.moveLeft();
-            }
-            robotArm.grab();
-            }
+			robotArm.speed = 1000;
+			robotArm.moveRight();
+			robotArm.grab();
+			for (var p = 0; p < 7; p++) {
+				for (var k = 0; k < 8; k++) {
+					robotArm.moveRight();
+				}
+				robotArm.drop();
+				for (var j = 0; j < 8; j++) {
+					robotArm.moveLeft();
+				}
+				robotArm.grab();
+			}
 
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
@@ -66,13 +66,16 @@
             robotArm.loadLevel("exercise 9");
 
             // Jou instructies volgen hier
-            robotArm.speed = 500;
+            robotArm.speed = 1000;
+            //in deze for staat dat hij de blokjes op moet pakken 1 tot 5 
             for(var i = 1; i < 5; i++) {
                 for(var j = 0; j < i; j++) {
                     robotArm.grab();
+                    // hier door verplaatst hij de blokjes 5 plaatsen opzij
                     for(var k = 0; k < 5; k++) {
                         robotArm.moveRight();
                     }
+                    //hier dropt hij de blokjes en gaat hij weer 5 plaatsen naar links 
                     robotArm.drop();
                     for(var k = 0; k < 5; k++) {
                         robotArm.moveLeft();
@@ -85,7 +88,7 @@
             robotArm.run();
         </script>
         <script>
-/*
+        		
         	// Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
@@ -94,14 +97,18 @@
             robotArm.loadLevel("exercise 10");
 
             // Jou instructies volgen hier
-            robotArm.speed = 500;
+            robotArm.speed = 100;
+            // de var geeft aan dat hij 9 plaatsen groot is
             var p = 9;
+            // geeft aan dat hij 5 blokjes moet pakken
             for(x = 0;x < 5;x++) {
             robotArm.grab();
+            //geeft aan dat hij naar rechts moet tot hij niet verder kan en dat er geen blokjes op elkaar mogen
              for(y = 0;y < p;y++){
                 robotArm.moveRight();
              }
              robotArm.drop();
+             //hier moet hij weer terug naar links tot hij bij een blokje komt 
              p-=1;
              for(y = 0;y < p;y++){
                 robotArm.moveLeft();
@@ -125,9 +132,11 @@
 
             // Jou instructies volgen hier
             robotArm.speed = 500;
+            //hij gaat hier eerst 9 naar rechts
             for(var i = 0; i < 9; i++) {
                 robotArm.moveRight();
             }
+            //hier pakt hij ze alle 9 op en scant hij de witte eruit als hij een witte heeft plaatst hij hem naar rechts en dropt hem daar en gaat hij weer naar links om verder te gaan waar hij was
             for(var i = 0; i < 9; i++) {
                 robotArm.grab();
                 var out = robotArm.scan();
@@ -136,6 +145,7 @@
                     robotArm.drop();
                     robotArm.moveLeft();
                 }
+                //de blokjes die niet wit zijn dropt hij gelijk weer
                 else{
                     robotArm.drop();
                 
@@ -147,7 +157,7 @@
             robotArm.run();
         </script>
         <script>
-          	
+          	/*
             // Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
@@ -165,19 +175,20 @@
             for(var j = 0; j < 9; j++) {
                 robotArm.grab();
                 robotArm.scan();
+
             if(robotArm.scan() == "red") {
             for(var k = 0; k < aantal; k++){
                 robotArm.moveRight();
-                }
+            }
                 robotArm.drop();
-                for (var k = 0; k <aantal; k++) {
+            for (var k = 0; k <aantal; k++) {
                 robotArm.moveLeft();	
-                }
+            }
                 
-                }
-                else{
+            }
+            else{
                 robotArm.drop();
-                }
+            }
                 var aantal = aantal+1
                 robotArm.moveLeft();
             }
