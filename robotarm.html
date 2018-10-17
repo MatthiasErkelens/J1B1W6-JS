@@ -88,7 +88,7 @@
             robotArm.run();
         </script>
         <script>
-        		
+        	/*	
         	// Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
@@ -97,7 +97,7 @@
             robotArm.loadLevel("exercise 10");
 
             // Jou instructies volgen hier
-            robotArm.speed = 100;
+            robotArm.speed = 500;
             // de var geeft aan dat hij 9 plaatsen groot is
             var p = 9;
             // geeft aan dat hij 5 blokjes moet pakken
@@ -157,7 +157,7 @@
             robotArm.run();
         </script>
         <script>
-          	/*
+          	
             // Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
@@ -167,8 +167,9 @@
 
             // Jou instructies volgen hier
             robotArm.speed = 1000;
-
+    		//de var is van het aantal blokjes op elkaar
             var aantal = 1
+            //
             for(var i = 0; i < 8; i++) {
                 robotArm.moveRight();
             }
